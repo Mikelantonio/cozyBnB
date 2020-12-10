@@ -45,13 +45,11 @@ data class RoomsEntity(
 
         @Basic
         @Column(name = "updated_at", nullable = true)
-        @Temporal(TemporalType.TIMESTAMP)
-        var updatedAt: Long = 0,
+        var updatedAt: java.sql.Timestamp? = null,
 
         @Basic
         @Column(name = "published_at", nullable = true)
-        @Temporal(TemporalType.TIMESTAMP)
-        var publishedAt: Long = 0,
+        var publishedAt: java.sql.Timestamp? = null,
 
         @OneToOne(mappedBy = "refRoomsEntity")
         var refAddressesEntity: AddressesEntity? = null,
