@@ -21,7 +21,7 @@ data class RoomsEntity(
 
         @Basic
         @Column(name = "price", nullable = false)
-        var price: Double? = null,
+        var price: Float? = null,
 
         @Basic
         @Column(name = "total_occupancy", nullable = false)
@@ -45,11 +45,13 @@ data class RoomsEntity(
 
         @Basic
         @Column(name = "updated_at", nullable = true)
-        var updatedAt: java.sql.Timestamp? = null,
+        @Temporal(TemporalType.TIMESTAMP)
+        var updatedAt: Long = 0,
 
         @Basic
         @Column(name = "published_at", nullable = true)
-        var publishedAt: java.sql.Timestamp? = null,
+        @Temporal(TemporalType.TIMESTAMP)
+        var publishedAt: Long = 0,
 
         @OneToOne(mappedBy = "refRoomsEntity")
         var refAddressesEntity: AddressesEntity? = null,
@@ -64,7 +66,7 @@ data class RoomsEntity(
         @JoinTable(
                 name = "room_furnitures",
                 joinColumns = [JoinColumn(name = "room_id")],
-                inverseJoinColumns = [JoinColumn(name = "furnitures_id")])
+                inverseJoinColumns = [JoinColumn(name = "furniture_id")])
         var refFurnituresEntities: MutableList<FurnituresEntity> = arrayListOf(),
 
         @ManyToOne(fetch = FetchType.LAZY)
@@ -75,7 +77,7 @@ data class RoomsEntity(
         @JoinColumn(name = "owner_id", referencedColumnName = "id")
         var refUsersEntity: UsersEntity? = null,
 
-        @OneToMany(mappedBy = "refRoomsEntity")
+        @OneToMany(mappedBy = "room")
         var refTimePeriodEntities: MutableList<TimePeriodEntity> = arrayListOf())
 
 

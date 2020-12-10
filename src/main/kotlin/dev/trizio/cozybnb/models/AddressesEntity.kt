@@ -31,11 +31,11 @@ data class AddressesEntity(
 
     @Basic
     @Column(name = "latitude", nullable = false)
-    var latitude: Double? = null,
+    var latitude: Float? = null,
 
     @Basic
     @Column(name = "longitude", nullable = false)
-    var longitude: Double? = null,
+    var longitude: Float? = null,
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id", referencedColumnName = "id")

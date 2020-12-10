@@ -19,6 +19,6 @@ data class TimePeriodEntity(
         @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id", referencedColumnName = "id")
-    var refRoomsEntity: RoomsEntity)
+    var room: RoomsEntity)
 
 

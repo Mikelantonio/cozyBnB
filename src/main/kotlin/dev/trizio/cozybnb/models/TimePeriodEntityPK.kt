@@ -4,7 +4,7 @@ import java.io.Serializable
 
 data class TimePeriodEntityPK (
 
-    var roomId: Long = -1,
+    var room: Long = -1,
 
     var startAt: java.sql.Date
 ) : Serializable

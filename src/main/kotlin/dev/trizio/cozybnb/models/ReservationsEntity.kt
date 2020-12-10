@@ -30,11 +30,11 @@ data class ReservationsEntity(
 
         @Basic
         @Column(name = "price", nullable = false)
-        var price: Double,
+        var price: Float,
 
         @Basic
         @Column(name = "total", nullable = false)
-        var total: Double,
+        var total: Float,
 
         @Basic
         @Column(name = "created_at", nullable = false)

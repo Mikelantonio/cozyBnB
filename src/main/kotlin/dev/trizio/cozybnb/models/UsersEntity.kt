@@ -43,7 +43,7 @@ data class UsersEntity(
     var phoneNumber: String? = null,
 
     @Basic
-    @Column(name = "description", nullable = true)
+    @Column(name = "description", columnDefinition = "TEXT", nullable = true)
     var description: String? = null,
 
     @Basic
