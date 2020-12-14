@@ -7,11 +7,14 @@ import org.springframework.data.domain.Sort
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
+import org.springframework.data.querydsl.QuerydslPredicateExecutor
 import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 
 @Repository
-interface RoomsEntityRepository : JpaRepository<RoomsEntity, Long>{
+interface RoomsEntityRepository : JpaRepository<RoomsEntity, Long>, QuerydslPredicateExecutor<RoomsEntity> {
+
+    fun findByOwnerIdAndPublishedAtGreaterThanAndAddressesEntity_city(ownerId : Long, publishedAt : Long, city: String)
 
     fun findByOwnerId(ownerId : Long) : List<RoomsEntity>
 
