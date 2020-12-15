@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository
 @Repository
 interface RoomsEntityRepository : JpaRepository<RoomsEntity, Long>, QuerydslPredicateExecutor<RoomsEntity> {
 
-    fun findByOwnerIdAndPublishedAtGreaterThanAndAddressesEntity_city(ownerId : Long, publishedAt : Long, city: String)
+    fun findByOwnerIdAndPublishedAtGreaterThanAndRefAddressesEntity_city(ownerId : Long, publishedAt : Long, city: String)
 
     fun findByOwnerId(ownerId : Long) : List<RoomsEntity>
 
