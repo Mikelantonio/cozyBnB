@@ -10,6 +10,7 @@ interface RoomsEntityService {
     fun addRoomsEntity(model: RoomsEntity): RoomsEntity
     fun updateRoomsEntity(id: Long, model: RoomsEntity): RoomsEntity
     fun deleteRoomsEntity(id: Long)
+    fun removeRoomsByOwnerId(ownerId : Long) : List<RoomsEntity>
     fun getRoomsEntities(predicate: Predicate, pageable: Pageable): Page<RoomsEntity>
     fun getRoomsEntities(ownerId : Long, publishedAt : Long, city : String) : List<RoomsEntity>
 

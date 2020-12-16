@@ -28,6 +28,10 @@ class RoomsEntityServiceImpl : RoomsEntityService {
         TODO("Not yet implemented")
     }
 
+    override fun removeRoomsByOwnerId(ownerId: Long): List<RoomsEntity> {
+        return repository.removeByOwnerId(ownerId)
+    }
+
     override fun getRoomsEntities(predicate: Predicate, pageable: Pageable): Page<RoomsEntity> {
         TODO("Not yet implemented")
     }

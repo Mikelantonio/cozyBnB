@@ -7,6 +7,7 @@ import javax.persistence.*
 data class UsersEntity(
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, insertable = false, updatable = false)
     var id: Long? = null,
 
