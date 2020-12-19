@@ -1,59 +1,60 @@
 package dev.trizio.cozybnb.models
 
+import java.sql.Timestamp
 import javax.persistence.*
 
 @Entity
 @Table(name = "users", schema = "cozybnb")
 data class UsersEntity(
 
-    @Id
+        @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, insertable = false, updatable = false)
     var id: Long? = null,
 
-    @Basic
+        @Basic
     @Column(name = "name", nullable = false)
     var name: String? = null,
 
-    @Basic
+        @Basic
     @Column(name = "email", nullable = false)
     var email: String? = null,
 
-    @Basic
+        @Basic
     @Column(name = "email_verified_at", nullable = true)
     var emailVerifiedAt: java.sql.Timestamp? = null,
 
-    @Basic
+        @Basic
     @Column(name = "password", nullable = false)
     var password: String? = null,
 
-    @Basic
+        @Basic
     @Column(name = "remember_token", nullable = true)
     var rememberToken: String? = null,
 
-    @Basic
+        @Basic
     @Column(name = "created_at", nullable = false)
-    var createdAt: java.sql.Timestamp? = null,
+    var createdAt: java.sql.Timestamp = Timestamp(System.currentTimeMillis()),
 
-    @Basic
+        @Basic
     @Column(name = "updated_at", nullable = true)
     var updatedAt: java.sql.Timestamp? = null,
 
-    @Basic
+        @Basic
     @Column(name = "phone_number", nullable = true)
     var phoneNumber: String? = null,
 
-    @Basic
+        @Basic
     @Column(name = "description", columnDefinition = "TEXT", nullable = true)
     var description: String? = null,
 
-    @Basic
+        @Basic
     @Column(name = "profile_image_url", nullable = true)
     var profileImageUrl: String? = null,
 
-    @OneToMany(mappedBy = "refUsersEntity")
+        @OneToMany(mappedBy = "refUsersEntity", fetch = FetchType.LAZY)
     var refReservationsEntities: MutableList<ReservationsEntity> = arrayListOf(),
 
-    @OneToMany(mappedBy = "refUsersEntity")
+        @OneToMany(mappedBy = "refUsersEntity")
     var refRoomsEntities: MutableList<RoomsEntity> = arrayListOf())
 

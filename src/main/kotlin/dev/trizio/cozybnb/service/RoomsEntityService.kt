@@ -13,5 +13,6 @@ interface RoomsEntityService {
     fun removeRoomsByOwnerId(ownerId : Long) : List<RoomsEntity>
     fun getRoomsEntities(predicate: Predicate, pageable: Pageable): Page<RoomsEntity>
     fun getRoomsEntities(ownerId : Long, publishedAt : Long, city : String) : List<RoomsEntity>
+    fun readRooms()
 
 }

@@ -1,5 +1,6 @@
 package dev.trizio.cozybnb.models
 
+import java.sql.Timestamp
 import javax.persistence.*
 
 @Entity
@@ -13,7 +14,7 @@ data class RoomsEntity(
 
         @Basic
         @Column(name = "room_type", nullable = false, insertable = false, updatable = false)
-        var roomType: Int? = null,
+        var roomType: Int,
 
         @Basic
         @Column(name = "description", columnDefinition = "TEXT", nullable = true)
@@ -21,27 +22,27 @@ data class RoomsEntity(
 
         @Basic
         @Column(name = "price", nullable = false)
-        var price: Float? = null,
+        var price: Float =0.0f,
 
         @Basic
         @Column(name = "total_occupancy", nullable = false)
-        var totalOccupancy: Int? = null,
+        var totalOccupancy: Int = 0,
 
         @Basic
         @Column(name = "total_bedrooms", nullable = false)
-        var totalBedrooms: Int? = null,
+        var totalBedrooms: Int = 0,
 
         @Basic
         @Column(name = "total_bathrooms", nullable = false)
-        var totalBathrooms: Int? = null,
+        var totalBathrooms: Int = 0,
 
         @Basic
         @Column(name = "owner_id", nullable = false, insertable = false, updatable = false)
-        var ownerId: Long? = null,
+        var ownerId: Long,
 
         @Basic
         @Column(name = "created_at", nullable = false)
-        var createdAt: java.sql.Timestamp? = null,
+        var createdAt: java.sql.Timestamp = Timestamp(System.currentTimeMillis()),
 
         @Basic
         @Column(name = "updated_at", nullable = true)

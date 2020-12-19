@@ -46,4 +46,12 @@ class RoomsEntityServiceImpl : RoomsEntityService {
 
     }
 
+    override fun readRooms() {
+
+       val roomList = repository.findAll()
+       for(room in roomList){
+           println(room.refUsersEntity?.email)
+       }
+    }
+
 }

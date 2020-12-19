@@ -1,0 +1,20 @@
+[
+  {
+    "_class": "dev.trizio.cozybnb.models.UsersEntity",
+    "name" : "Mike Trizio",
+    "email" : "myawesomeemail@trizio.dev",
+    "password" : "myawesomepwd1",
+    "refRoomsEntities" : [
+      {
+        "description": "cozy apartment",
+        "roomType" : 1
+      }
+    ]
+  },
+  {
+    "_class": "dev.trizio.cozybnb.models.UsersEntity",
+    "name" : "Tony Stark",
+    "email" : "tony@stark.com",
+    "password" : "ironmanRocks"
+  }
+]

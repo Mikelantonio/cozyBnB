@@ -37,6 +37,7 @@ dependencies {
 	val flyway = "6.4.4"
 	val queryDslVersion = "4.3.1"
 	val springBoot = "2.3.5.RELEASE"
+	val javafaker = "1.0.2"
 
 	//query annotation lib
 	kapt("com.querydsl:querydsl-apt:$queryDslVersion:jpa")
@@ -61,6 +62,9 @@ dependencies {
 	//documentation
 	implementation("io.springfox:springfox-swagger2:$swagger")
 	implementation("io.springfox:springfox-swagger-ui:$swagger")
+
+	//utils
+	implementation("com.github.javafaker:javafaker:$javafaker")
 
 	//test
 	testImplementation("org.springframework.boot:spring-boot-starter-test:$springBoot") {

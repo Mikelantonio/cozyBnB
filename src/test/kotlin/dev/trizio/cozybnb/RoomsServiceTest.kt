@@ -27,7 +27,8 @@ class RoomsServiceTest {
         //given
         val room = RoomsEntity(
                 id = 120,
-                ownerId = 1)
+                ownerId = 1,
+                roomType = 1)
 
         given(repository.removeByOwnerId(1)).willReturn(arrayListOf(room))
 
